@@ -1,0 +1,35 @@
+#change-photos{
+	width: 660px;
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+	display: block;
+	margin: 25px auto;
+}
+#change-photos ul{
+	position: relative;
+	width: 100%;
+	height: auto;
+	margin: 0; padding: 0;
+}
+#change-photos ul::after{
+	content: " ";
+	display: table;
+	width: 100%;
+	height: auto;
+	clear: both;
+}
+#change-photos ul li{
+	margin: 0 10px 10px 0;
+	padding: 0;
+	display: inline-block;
+	float: left;
+}
+#change-photos ul li:nth-child(2n){
+	margin-right: 0;
+}
+#change-photos ul li img{
+	display: block;
+	margin: 0;
+	padding: 0;
+}

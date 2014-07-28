@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Untitled Document</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<div id="change-photos">
+	<ul>
+		<li><img src="img/placeholder_0000_amarelo.jpg" alt=""></li>
+		<li><img src="img/placeholder_0001_verde.jpg" alt=""></li>
+		<li><img src="img/placeholder_0002_azul.jpg" alt=""></li>
+		<li><img src="img/placeholder_0003_vermelho.jpg" alt=""></li>
+	</ul>
+</div>
+
+ <script src="js/lib/jquery.min.js"></script>
+ <script src="js/change-image.js"></script>
+ <script>
+ 	$(function($){
+ 		$('#change-photos').changePhotos({
+			changeTime: 50
+		});
+ 	});
+ </script>
+</body>
+</html>
