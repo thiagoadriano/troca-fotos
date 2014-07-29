@@ -18,7 +18,7 @@
 			var img       = $(this).find('img'),
 				lengthImg = img.length,
 				i         = 0, 
-				nameImg   = new Array();
+				nameImg   = [];
 			
 			function pushName(){
 				for(i; i < lengthImg; i++){
@@ -39,14 +39,55 @@
 					
 					var atuaSrc = img.eq(d).attr('src'),
 						atualImgArray = nameImg.indexOf(atuaSrc);
-										
-				if(atualImgArray === (lengthImg - 1) ){
-					img.eq(d).attr('src', nameImg[0]);
+                
+                function cImg(posicao, index){ 
+                    return img.eq(posicao).attr('src', nameImg[index]);
+                }
+//                             0       1      2      3
+//                no array [amarelo, verde, azul, vermelho]
 
-				}else{
-					img.eq(d).attr('src', nameImg[atualImgArray + 1]);
+//                   0          1
+//                amarelo  |  verde
+//                  2            3
+//                azul    |  vermelho
+                if( d === 0 ){
+                    cImg(0, 2);
+                    cImg(1, 0);
+                    cImg(2, 3);
+                    cImg(3, 1);
+                }
 
-				}
+//                   0           1
+//                 azul     | amarelo
+//                   2          3
+//                vermelho | verde
+                else if( d === 1){
+                    cImg(0, 3);
+                    cImg(1, 2);
+                    cImg(2, 1);
+                    cImg(3, 0);
+                }
+                
+//                   0          1
+//                vermelho |  azul
+//                  2          3
+//                verde   | amarelo
+                else if( d === 2 ){
+                    cImg(0, 1);
+                    cImg(1, 3);
+                    cImg(2, 0);
+                    cImg(3, 2);
+                }
+//                  0          1 
+//                verde   | vermelho
+//                   2       3
+//                amarelo | azul
+                else if( d === 3 ){
+                    cImg(0, 0);
+                    cImg(1, 1);
+                    cImg(2, 2);
+                    cImg(3, 3);  
+                }
 				
 				d++;
 			}
